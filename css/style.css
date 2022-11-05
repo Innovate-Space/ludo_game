@@ -25,6 +25,10 @@ body, html{
     grid-template-rows: 245px 150px 245px;
 }
 
+.home{
+    position: relative;
+}
+
 .home.red{
     background-color: red;
 }
@@ -60,7 +64,38 @@ body, html{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .center{
-    border: 1px solid black
+    border: 1px solid black;
 }
+
+.dot{
+    height: 20px;
+    width: 20px;
+    background-color: pink;
+    border-radius: 50%;
+    transition: .3s;
+    position: absolute;
+}
+
+.init.dot_red_1, .init.dot_blue_1, .init.dot_green_1, .init.dot_yellow_1{
+    top: 30px;
+    left: 30px
+}
+.init.dot_red_2, .init.dot_blue_2, .init.dot_green_2, .init.dot_yellow_2{
+    top: 30px;
+    right: 30px
+}
+
+.init.dot_red_3, .init.dot_blue_3, .init.dot_green_3, .init.dot_yellow_3{
+    bottom: 30px;
+    left: 30px
+}
+
+.init.dot_red_4, .init.dot_blue_4, .init.dot_green_4, .init.dot_yellow_4{
+    bottom: 30px;
+    right: 30px
+}
+
+

@@ -1,0 +1,66 @@
+*,::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+.board{
+    height: 650px;
+    width: 650px;
+    border: 5px double green;
+    display: grid;
+    grid-template-columns: 245px 150px 245px;
+    grid-template-rows: 245px 150px 245px;
+}
+
+.home.red{
+    background-color: red;
+}
+.home.green{
+    background-color: green;
+}
+.home.yellow{
+    background-color: yellow;
+}
+.home.blue{
+    background-color: blue;
+}
+.street.green , .street.blue{
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    gap: 2px;
+    border: 1px solid black;
+    
+}
+.street.red, .street.yellow{
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+    gap: 2px;
+    border: 1px solid black;
+    
+}
+.item{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center{
+    border: 1px solid black
+}

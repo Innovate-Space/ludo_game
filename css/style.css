@@ -70,6 +70,8 @@ body, html{
     border: 1px solid black;
 }
 
+/* Dots styling */
+
 .dot{
     height: 20px;
     width: 20px;
@@ -96,6 +98,53 @@ body, html{
 .init.dot_red_4, .init.dot_blue_4, .init.dot_green_4, .init.dot_yellow_4{
     bottom: 30px;
     right: 30px
+}
+
+.dot_green_1,.dot_green_2,.dot_green_3,.dot_green_4{
+    background-color: rgb(45, 216, 45);
+    border: 1px solid black;
+}
+
+.dot_blue_1,.dot_blue_2,.dot_blue_3,.dot_blue_4{
+    background-color: blue;
+    border: 1px solid black;
+}
+.dot_yellow_1,.dot_yellow_2,.dot_yellow_3,.dot_yellow_4{
+    background-color: yellow;
+    border: 1px solid black;
+}
+.dot_red_1,.dot_red_2,.dot_red_3,.dot_red_4{
+    background-color: rgb(229, 58, 58);
+    border: 1px solid black;
+}
+
+
+/* Street styling */
+.item_red_0,.item_red_1,.item_red_2,.item_red_3,.item_red_4,.item_1{
+    /* background-color: rgb(229, 58, 58); */
+    background-color: red;
+}
+.item_blue_0,.item_blue_1,.item_blue_2,.item_blue_3,.item_blue_4,.item_40{
+    background-color: blue;
+}
+.item_green_0,.item_green_1,.item_green_2,.item_green_3,.item_green_4,.item_14{
+    background-color: green;
+}
+.item_yellow_0,.item_yellow_1,.item_yellow_2,.item_yellow_3,.item_yellow_4,.item_27{
+    background-color: yellow;
+}
+
+
+/* DICE STYLING */
+.dice{
+
+    height: 60px;
+    width: 60px;
+    border:2px solid black;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

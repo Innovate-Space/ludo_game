@@ -1,9 +1,11 @@
 // Player with a value of 1 is red and yellow, while player with value of 2 is green and blue
-let player1;
-let player2;
+const side1 =1;
+const side2 = 2;
 let dice1Value;
 let dice2Value;
 let currentTurn;
+let human
+let cpu
 
 const pawns = {
     dot_green_1: {
@@ -120,6 +122,8 @@ const pawns = {
     },
     
 }
+
+let currentMaze = [];
 updateDiceView(6, 6);
 
 function rollDice(timer = 200){
@@ -131,38 +135,55 @@ function rollDice(timer = 200){
             }
             dice1Value = Math.floor(Math.random() * 6) + 1
             dice2Value = Math.floor(Math.random() * 6) + 1
-            updateDiceView(dice1Value, dice2Value)
+            updateDiceView(dice1Value, dice2Value);
             i++;
         },timer)
     }
-    
-
 }
 
 function updateDiceView(v1, v2) {
     const d1 = document.querySelector('.dice1');
     const d2 = document.querySelector('.dice2');
+    const d1v = document.querySelector('.d1v');
+    const d2v = document.querySelector('.d2v');
+    const dSumV = document.querySelector('.dSumV');
+
     d1.innerHTML = v1;
+    d1v.innerHTML = v1;
     d2.innerHTML = v2;
+    d2v.innerHTML = v2;
+    dSumV.innerHTML = v1 + v2;
 }
 
 function start(){
     assignSides()
+    assignTurn()
+}
+
+function assignTurn(){
+    currentTurn =  Math.floor(Math.random() * 2) + 1;;
+    setTurn(currentTurn)
+    if(currentTurn == cpu){
+        cpuPlay()
+    }
 }
 
 function assignSides() {
     const rand = Math.floor(Math.random() * 2) + 1;
     if(rand == 1) {
-        player1 = 1
-        player2 = 2
-        updateSideLabel(player1, player2)
+       
+        human = side1;
+        cpu = side2;
+        updateSideLabel(human, cpu)
     }else{
-        player2 = 1;
-        player1 = 2
-        updateSideLabel(player1, player2)
+        human = side2;
+        cpu = side1;
+        updateSideLabel(human, cpu)
     }
-    currentTurn = rand;
-    setTurn(currentTurn)
+}
+
+function cpuPlay() {
+    rollDice();
 }
 
 function updateSideLabel(side1, side2){
@@ -178,7 +199,7 @@ function updateSideLabel(side1, side2){
 
 function setTurn(player){
     const turn = document.querySelector('.turn');
-    turn.innerHTML = player == 1 ? 'Player': 'CPU';
+    turn.innerHTML = player == human ? 'Player': 'CPU';
 }
 
 const dot = document.querySelector('.dotm');
